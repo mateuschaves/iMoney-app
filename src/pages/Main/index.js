@@ -1,7 +1,12 @@
 import React from 'react';
 
 import {
-  Text, Image, StyleSheet, Dimensions, ImageBackground, StatusBar,
+  Text,
+  Image,
+  StyleSheet,
+  Dimensions,
+  ImageBackground,
+  StatusBar,
 } from 'react-native';
 
 const styles = StyleSheet.create({
@@ -33,27 +38,34 @@ const styles = StyleSheet.create({
   },
 });
 
-const Main = () => (
-  <ImageBackground
-    source={{
-      uri: 'https://s3-sa-east-1.amazonaws.com/rocketseat-cdn/background.png',
-    }}
-    style={styles.container}
-    resizeMode="cover"
-  >
-    <StatusBar barStyle="light-content" backgroundColor="#7159c1" />
-    <Image
+export default function Main() {
+  return (
+    <ImageBackground
       source={{
-        uri: 'https://s3-sa-east-1.amazonaws.com/rocketseat-cdn/rocketseat_logo.png',
+        uri: 'https://s3-sa-east-1.amazonaws.com/rocketseat-cdn/background.png',
       }}
-      style={styles.logo}
-      resizeMode="contain"
-    />
-    <Text style={styles.welcome}>Bem-vindo ao Template Avançado!</Text>
-    <Text style={styles.instructions}>Essa é a tela principal da sua aplicação =)</Text>
-    <Text style={styles.instructions}>Você pode editar a tela no arquivo:</Text>
-    <Text style={[styles.instructions, styles.fileName]}>src/pages/Main/index.js</Text>
-  </ImageBackground>
-);
-
-export default Main;
+      style={styles.container}
+      resizeMode="cover"
+    >
+      <StatusBar barStyle="light-content" backgroundColor="#7159c1" />
+      <Image
+        source={{
+          uri:
+            'https://s3-sa-east-1.amazonaws.com/rocketseat-cdn/rocketseat_logo.png',
+        }}
+        style={styles.logo}
+        resizeMode="contain"
+      />
+      <Text style={styles.welcome}>Bem-vindo ao Template Avançado!</Text>
+      <Text style={styles.instructions}>
+        Essa é a tela principal da sua aplicação =)
+      </Text>
+      <Text style={styles.instructions}>
+        Você pode editar a tela no arquivo:
+      </Text>
+      <Text style={[styles.instructions, styles.fileName]}>
+        src/pages/Main/index.js
+      </Text>
+    </ImageBackground>
+  );
+}
